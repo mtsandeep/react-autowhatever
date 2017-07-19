@@ -37,6 +37,7 @@ export default class Autowhatever extends Component {
     renderItemData: PropTypes.object,     // Arbitrary data that will be passed to renderItem()
     renderSectionTitle: PropTypes.func,   // This function gets a section and renders its title.
     getSectionItems: PropTypes.func,      // This function gets a section and returns its items, which will be passed into `renderItem` for rendering.
+    loopThrough: PropTypes.bool,          // Indicates whether suggestions will go in loop when we reach bottom or top through down or up arrow.
     inputProps: PropTypes.object,         // Arbitrary input props
     itemProps: PropTypes.oneOfType([      // Arbitrary item props
       PropTypes.object,
@@ -65,6 +66,7 @@ export default class Autowhatever extends Component {
     getSectionItems: () => {
       throw new Error('`getSectionItems` must be provided');
     },
+	loopThrough: false,
     inputProps: emptyObject,
     itemProps: emptyObject,
     highlightedSectionIndex: null,
@@ -255,7 +257,7 @@ export default class Autowhatever extends Component {
       case 'ArrowUp': {
         const nextPrev = (event.key === 'ArrowDown' ? 'next' : 'prev');
         const [newHighlightedSectionIndex, newHighlightedItemIndex] =
-          this.sectionIterator[nextPrev]([highlightedSectionIndex, highlightedItemIndex]);
+          this.sectionIterator[nextPrev]([highlightedSectionIndex, highlightedItemIndex], loopThrough);
 
         inputProps.onKeyDown(event, { newHighlightedSectionIndex, newHighlightedItemIndex });
         break;
