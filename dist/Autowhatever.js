@@ -134,7 +134,8 @@ var Autowhatever = function (_Component) {
       var _this$props = _this.props,
           inputProps = _this$props.inputProps,
           highlightedSectionIndex = _this$props.highlightedSectionIndex,
-          highlightedItemIndex = _this$props.highlightedItemIndex;
+          highlightedItemIndex = _this$props.highlightedItemIndex,
+          loopThrough = _this$props.loopThrough;
 
 
       switch (event.key) {
