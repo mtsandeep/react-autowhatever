@@ -250,7 +250,7 @@ export default class Autowhatever extends Component {
   };
 
   onKeyDown = event => {
-    const { inputProps, highlightedSectionIndex, highlightedItemIndex } = this.props;
+    const { inputProps, highlightedSectionIndex, highlightedItemIndex, loopThrough } = this.props;
 
     switch (event.key) {
       case 'ArrowDown':
