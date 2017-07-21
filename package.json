@@ -14,7 +14,7 @@
     "test": "mocha \"test/**/*.test.js\" --compilers js:babel-register --require test/setup.js",
     "copy-static-files": "cp demo/src/index.html demo/dist/",
     "dist": "rm -rf dist && mkdir dist && babel src -d dist",
-    "demo-dist": "rm -rf demo/dist && mkdir demo/dist && npm run copy-static-files && webpack --config webpack.gh-pages.config.js",
+    "demo-dist": "npm run copy-static-files && webpack --config webpack.gh-pages.config.js",
     "standalone": "webpack --config webpack.standalone.config.js && webpack --config webpack.standalone-demo.config.js",
     "prebuild": "npm run lint && npm test",
     "build": "npm run dist && npm run standalone",
@@ -27,7 +27,7 @@
   "dependencies": {
     "prop-types": "^15.5.8",
     "react-themeable": "^1.1.0",
-    "section-iterator": "^2.0.0"
+    "section-iterator": "git+https://github.com/mtsandeep/section-iterator.git"
   },
   "peerDependencies": {
     "react": ">=0.14.7"
