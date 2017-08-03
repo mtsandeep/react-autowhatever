@@ -299,7 +299,7 @@ export default class Autowhatever extends Component {
   render() {
     const { theme } = this;
     const {
-      id, multiSection, renderInputComponent, renderItemsContainer,
+      id, multiSection, renderInputComponent, renderItemsContainer, items,
       highlightedSectionIndex, highlightedItemIndex
     } = this.props;
     const { isInputFocused } = this.state;
@@ -350,7 +350,7 @@ export default class Autowhatever extends Component {
     return (
       <div {...containerProps}>
         {inputComponent}
-        {itemsContainer}
+        {items.length > 0 && itemsContainer}
       </div>
     );
   }
