@@ -346,6 +346,7 @@ var Autowhatever = function (_Component) {
           multiSection = _props3.multiSection,
           renderInputComponent = _props3.renderInputComponent,
           renderItemsContainer = _props3.renderItemsContainer,
+          items = _props3.items,
           highlightedSectionIndex = _props3.highlightedSectionIndex,
           highlightedItemIndex = _props3.highlightedItemIndex;
       var isInputFocused = this.state.isInputFocused;
@@ -384,7 +385,7 @@ var Autowhatever = function (_Component) {
         'div',
         containerProps,
         inputComponent,
-        itemsContainer
+        items.length > 0 && itemsContainer
       );
     }
   }]);
